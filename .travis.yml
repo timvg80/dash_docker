@@ -2,6 +2,9 @@ sudo: required
 services:
   - docker
 
+script:
+- echo "skipping tests"
+
 before_install:
   - docker build -t timvg80/dash_docker .
 
