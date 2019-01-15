@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t timvg80/dash_docker -f .
+  - docker build -t timvg80/dash_docker .
 
 deploy:
   provider: elasticbeanstalk
