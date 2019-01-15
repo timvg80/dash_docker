@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+script:
+- echo "skipping tests"
+
+before_install:
+  - docker build -t timvg80/dash_docker .
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-2"
+  app: "dash_docker"
+  env: "DashDocker-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-437927076461"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
