@@ -13,6 +13,8 @@ app = dash.Dash()
 stock_choices = [('Apple', 'AAPL'), ('IBM', 'IBM'), ('Google', 'GOOG'),
                  ('Tesla', 'TSLA'), ('Amazon', 'AMZN')]
 
+stock_lookup = {v: i for i, v in stock_choices}
+
 today_time = datetime.datetime.now()
 today = datetime.date(today_time.year, today_time.month, today_time.day)
 
@@ -80,7 +82,7 @@ def update_graph(n_clicks, stock, start, end):
         close=stock_df['close'],
         dates=stock_df['date']
     )
-    fig['layout']['title'] = 'Candlestick plot for {} stocks'.format(stock)
+    fig['layout']['title'] = 'Candlestick plot for {} stocks'.format(stock_lookup[stock])
     return fig
 
 
