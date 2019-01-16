@@ -10,7 +10,7 @@ import datetime
 
 app = dash.Dash()
 
-stock_choices = [('Apple', 'AAPL'), ('IBM', 'IBM'),
+stock_choices = [('Apple', 'AAPL'), ('IBM', 'IBM'), ('Google', 'GOOG'),
                  ('Tesla', 'TSLA'), ('Amazon', 'AMZN')]
 
 today_time = datetime.datetime.now()
