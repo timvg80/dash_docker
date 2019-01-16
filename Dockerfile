@@ -10,4 +10,4 @@ COPY ./financial_time_series_plots.py ./
 
 EXPOSE 8050
 
-CMD ["python", "financial_time_series_plots.py"]
+CMD ["gunicorn", "-b", ":8050", "financial_time_series_plots:app.server"]
