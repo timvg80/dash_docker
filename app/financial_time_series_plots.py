@@ -19,7 +19,6 @@ today_time = datetime.datetime.now()
 today = datetime.date(today_time.year, today_time.month, today_time.day)
 
 # The next variable is a year minus a day in the past
-# This is because the Robinhood API from pandas_datareader can only go this far
 first_date = today - relativedelta(years=1) + relativedelta(days=1)
 
 app.layout = html.Div(
