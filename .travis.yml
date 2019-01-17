@@ -2,11 +2,11 @@ sudo: required
 services:
   - docker
 
-script:
-- echo "skipping tests"
-
 before_install:
-  - docker build -t timvg80/dash_docker .
+  - docker build -t dash_docker .
+
+script:
+  - docker run -it dash_docker python -m pytest -W ignore::DeprecationWarning
 
 deploy:
   provider: elasticbeanstalk
