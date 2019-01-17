@@ -6,8 +6,10 @@ COPY ./requirements.txt ./
 
 RUN pip install -r requirements.txt
 
-COPY ./financial_time_series_plots.py ./
+COPY ./app ./app
+COPY ./tests ./tests
+COPY ./runner.py ./
 
 EXPOSE 8050
 
-CMD ["python", "financial_time_series_plots.py"]
+CMD ["gunicorn", "-b", ":8050", "runner:app.server"]
