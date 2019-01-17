@@ -46,7 +46,7 @@ app.layout = html.Div(
                     id='date_range',
                     min_date_allowed=first_date,
                     max_date_allowed=today,
-                    initial_visible_month=today - relativedelta(months=6),
+                    initial_visible_month=first_date,
                     start_date=today - relativedelta(months=6),
                     end_date=today
                 )
