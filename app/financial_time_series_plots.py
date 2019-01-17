@@ -47,7 +47,8 @@ app.layout = html.Div(
                     min_date_allowed=first_date,
                     max_date_allowed=today,
                     start_date=first_date,
-                    end_date=today
+                    end_date=today,
+                    display_format='MMM Do, YYYY'
                 )
             ], style={'width': '45%', 'display': 'inline-block',
                       'textAlign': 'center'}
