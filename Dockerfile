@@ -9,7 +9,6 @@ RUN pip install -r requirements.txt
 COPY ./app ./app
 COPY ./tests ./tests
 COPY ./runner.py ./
-COPY ./filetest.py ./
 
 EXPOSE 8050
 
