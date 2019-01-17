@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t dash_docker .
+  - docker build -t timvg80/dash_docker .
 
 script:
-  - docker run -it dash_docker python -m pytest -W ignore::DeprecationWarning
+  - docker run -it timvg80/dash_docker python -m pytest -W ignore::DeprecationWarning
 
 deploy:
   provider: elasticbeanstalk
