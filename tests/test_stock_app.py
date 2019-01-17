@@ -13,9 +13,7 @@ start = datetime.date(2019, 1, 1)
 end = datetime.date(2019, 1, 9)
 
 
-def test_update_graph(mocker, request):
-    path = os.path.join(request.fspath.dirname, 'data', 'input_data.csv')
-    input_data = pd.read_csv(path, index_col='date', parse_dates=True)
+def test_update_graph(mocker):
     mocker.patch.object(web, 'DataReader')
     web.DataReader.return_value = input_data
     return_fig = update_graph(1, 'GOOG', start, end)
