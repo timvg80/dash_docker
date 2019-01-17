@@ -87,7 +87,7 @@ def update_graph(n_clicks, stock, start, end):
         close=stock_df['close'],
         dates=stock_df['date']
     )
-    fig['layout']['title'] = 'Candlestick plot for {} stocks' \
+    fig['layout']['title'] = 'Candlestick plot for {} - Just for PyData!' \
         .format(stock_lookup[stock])
     return fig
 
